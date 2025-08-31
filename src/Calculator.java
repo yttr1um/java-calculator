@@ -58,6 +58,23 @@ public class Calculator {
             String buttonValue = buttonValues[i];
             button.setFont(new Font("Arial", Font.PLAIN, 30));
             button.setText(buttonValue);
+            button.setFocusable(false);
+            button.setBorder(new LineBorder(customBlack));
+
+            if (Arrays.asList(topSymbols).contains(buttonValue)) {
+                button.setBackground(customLightGray);
+                button.setForeground(customBlack);
+            }
+
+            else if (Arrays.asList(rightSymbols).contains(buttonValue)) {
+                button.setBackground(customOrange);
+                button.setForeground(Color.white);
+            }
+
+            else {
+                button.setBackground(customDarkGray);
+                button.setForeground(Color.white);
+            }
             buttonsPanel.add(button);
         }
     }
